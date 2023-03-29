@@ -3,17 +3,17 @@
 -- Add any additional autocmds here
 -- -- Disable autoformat for lua files
 vim.api.nvim_create_autocmd({ "BufRead" }, {
-  pattern = { "prism-ui-ntnx-react-ui-app/*" },
+  pattern = { "**/prism-ui-ntnx-react-ui-app/*", "**/prismui/*", "**/aiops-ui-services-app/*" },
   callback = function()
-    local data = {
-      buf = vim.fn.expand("<abuf>"),
-      file = vim.fn.expand("<afile>"),
-      match = vim.fn.expand("<amatch>"),
-    }
+    -- local data = {
+    --   buf = vim.fn.expand("<abuf>"),
+    --   file = vim.fn.expand("<afile>"),
+    --   match = vim.fn.expand("<amatch>"),
+    -- }
     vim.schedule(function()
-      print("test")
-      print(vim.inspect(data))
+      -- print(vim.inspect(data))
+      require("notify")("Turning autoformat off for this")
     end)
-    -- vim.b.autoformat = false
+    vim.b.autoformat = false
   end,
 })

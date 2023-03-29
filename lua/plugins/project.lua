@@ -1,16 +1,29 @@
 return {
-
-  -- {
-  --   "ahmedkhalf/project.nvim",
-  --   config = function()
-  --     require("project_nvim").setup({
-  --       -- your configuration comes here
-  --       -- or leave it empty to use the default settings
-  --       -- refer to the configuration section below
-  --     })
-  --     -- enable telescope integration
-  --     require("telescope").load_extension("projects")
-  --     -- require("telescope").extensions.projects.projects({})
-  --   end,
-  -- },
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      { "nvim-telescope/telescope-project.nvim" },
+    },
+    keys = {
+      { "<leader>p", "<cmd>lua require'telescope'.extensions.project.project{}<cr>", desc = "Telescope Project" },
+    },
+    opts = {
+      extensions = {
+        project = {
+          base_dirs = { { path = "~/dev", max_depth = 4 } },
+          -- on_project_selected = function(prompt_bufnr)
+          --   -- Do anything you want in here. For example:
+          --   project_actions.change_working_directory(prompt_bufnr, false)
+          -- end,
+        },
+      },
+    },
+    config = function(_, opts)
+      local telescope = require("telescope")
+      telescope.setup(opts)
+      telescope.load_extension("project")
+      telescope.load_extension("fzf")
+    end,
+  },
 }
