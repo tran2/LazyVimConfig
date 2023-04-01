@@ -17,3 +17,9 @@ vim.api.nvim_create_autocmd({ "BufRead" }, {
     vim.b.autoformat = false
   end,
 })
+
+vim.api.nvim_create_autocmd("FocusLost", {
+  pattern = "*",
+  command = ":wa",
+  desc = "Autosave on FocusLost",
+})
