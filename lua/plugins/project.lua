@@ -9,6 +9,14 @@ return {
       { "<leader>p", "<cmd>lua require'telescope'.extensions.project.project{}<cr>", desc = "Telescope Project" },
     },
     opts = {
+      defaults = {
+        path_display = {
+          shorten = {
+            len = 3,
+            exclude = { 1, -1 },
+          },
+        },
+      },
       extensions = {
         project = {
           base_dirs = { { path = "~/dev", max_depth = 4 } },
