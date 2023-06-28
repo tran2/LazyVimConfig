@@ -11,10 +11,11 @@ return {
     opts = {
       defaults = {
         path_display = {
-          shorten = {
-            len = 3,
-            exclude = { 1, -1 },
-          },
+          truncate = 3,
+          -- shorten = {
+          --   len = 3,
+          --   exclude = { 1, -1 },
+          -- },
         },
       },
       extensions = {
