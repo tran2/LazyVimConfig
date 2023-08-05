@@ -70,6 +70,13 @@ return {
         noremap = true,
         silent = true,
       },
+      {
+        "<leader>j3",
+        "<cmd>:lua require('harpoon.ui').nav_file(2)<CR>",
+        desc = "Go to mark 3",
+        noremap = true,
+        silent = true,
+      },
     },
   },
 }
