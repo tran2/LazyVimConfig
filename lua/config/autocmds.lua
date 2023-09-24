@@ -7,8 +7,26 @@
 -- add a file autoformat-ignore with content like {
 --   "**/node_modules/*",
 -- }
+local function prequire(...)
+  local status, lib = pcall(require, ...)
+  if status then
+    return lib
+  end
+  --Library failed to load, so perhaps return `nil` or something?
+  return nil
+end
+
+local ignore = prequire("config.autoformat-ignore")
+local ignore_pattern = {
+  "**/node_module/**",
+}
+if ignore then
+  ignore_pattern = vim.tbl_extend("force", ignore_pattern, ignore)
+end
+print(vim.inspect(ignore_pattern))
+
 vim.api.nvim_create_autocmd({ "BufRead" }, {
-  pattern = require("config.autoformat-ignore"),
+  pattern = ignore_pattern,
   callback = function()
     -- local data = {
     --   buf = vim.fn.expand("<abuf>"),
