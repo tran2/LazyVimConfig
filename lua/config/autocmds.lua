@@ -3,10 +3,6 @@
 -- Add any additional autocmds here
 --
 
--- -- Disable autoformat for lua files
--- add a file autoformat-ignore with content like {
---   "**/node_modules/*",
--- }
 local function prequire(...)
   local status, lib = pcall(require, ...)
   if status then
@@ -16,6 +12,10 @@ local function prequire(...)
   return nil
 end
 
+-- add a file autoformat-ignore with content like {
+--   "**/node_modules/*",
+-- }
+-- to ignore format after save
 local ignore = prequire("config.autoformat-ignore")
 local ignore_pattern = {
   "**/node_module/**",
@@ -23,7 +23,7 @@ local ignore_pattern = {
 if ignore then
   ignore_pattern = vim.tbl_extend("force", ignore_pattern, ignore)
 end
-print(vim.inspect(ignore_pattern))
+-- print(vim.inspect(ignore_pattern))
 
 vim.api.nvim_create_autocmd({ "BufRead" }, {
   pattern = ignore_pattern,
