@@ -7,3 +7,5 @@ foo.*
 *.log
 data
 lua/config/autoformat-ignore.lua
+lua/config/local.lua
+templates/local/*

@@ -12,6 +12,8 @@ local function prequire(...)
   return nil
 end
 
+prequire("config.local")
+
 -- add a file autoformat-ignore with content like {
 --   "**/node_modules/*",
 -- }
@@ -37,12 +39,22 @@ vim.api.nvim_create_autocmd({ "BufRead" }, {
       -- print(vim.inspect(data))
       require("notify")("Turning autoformat off for this")
     end)
+
     vim.b.autoformat = false
   end,
 })
 
+-- AutoSave
 vim.api.nvim_create_autocmd("FocusLost", {
   pattern = "*",
   command = ":wa",
   desc = "Autosave on FocusLost",
 })
+
+--file Templating
+-- vim.api.nvim_create_autocmd({ "BufNewFile" }, {
+--   pattern = "*.js",
+--   callback = function()
+--     vim.cmd("0read ~/.config/nvim/templates/skeleton-copyright.js")
+--   end,
+-- })

@@ -18,6 +18,11 @@ return {
           -- },
         },
       },
+      pickers = {
+        find_files = {
+          hidden = true,
+        },
+      },
       extensions = {
         project = {
           base_dirs = { { path = "~/dev", max_depth = 4 } },
