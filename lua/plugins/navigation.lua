@@ -18,7 +18,7 @@ return {
       },
       {
         "<leader>jj",
-        "<cmd>:lua require('nvim-quick-switcher').find('.(js|jsx)$', { regex = true, prefix='short' })<CR>",
+        "<cmd>:lua require('nvim-quick-switcher').find('.(js|jsx|ts|tsx)$', { regex = true, prefix='short' })<CR>",
         desc = "switch to jsx or js",
         noremap = true,
         silent = true,

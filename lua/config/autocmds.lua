@@ -52,9 +52,9 @@ vim.api.nvim_create_autocmd("FocusLost", {
 })
 
 --file Templating
--- vim.api.nvim_create_autocmd({ "BufNewFile" }, {
---   pattern = "*.js",
---   callback = function()
---     vim.cmd("0read ~/.config/nvim/templates/skeleton-copyright.js")
---   end,
--- })
+vim.api.nvim_create_autocmd({ "BufNewFile" }, {
+  pattern = "*.jsx",
+  callback = function()
+    vim.cmd("0read ~/.config/nvim/templates/skeleton-copyright.js")
+  end,
+})
