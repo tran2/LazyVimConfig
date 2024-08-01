@@ -26,6 +26,7 @@ local function setTmuxNavKeys()
 end
 
 vim.keymap.set("n", "<leader>bac", "<cmd>:lua CopyCurrentBufferPath()<CR>", { desc = "Copy current file path" })
+
 -- Set tmux keys here due to vim lazy update causing plugin's keys to be overwritten
 -- https://github.com/LazyVim/LazyVim/commit/f892ba5cffe8fcac724ad6b801e0824b391fa037
 setTmuxNavKeys()

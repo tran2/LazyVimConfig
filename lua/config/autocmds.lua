@@ -45,11 +45,7 @@ vim.api.nvim_create_autocmd({ "BufRead" }, {
 })
 
 -- AutoSave
-vim.api.nvim_create_autocmd("FocusLost", {
-  pattern = "*",
-  command = ":wa",
-  desc = "Autosave on FocusLost",
-})
+vim.api.nvim_create_autocmd("FocusLost", { pattern = "*", command = ":wa", desc = "Autosave on FocusLost" })
 
 --file Templating
 vim.api.nvim_create_autocmd({ "BufNewFile" }, {

@@ -30,6 +30,8 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
+      -- set the gcc compiler if needed
+      require("nvim-treesitter.install").compilers = { "gcc-14" }
       -- add tsx and treesitter
       vim.list_extend(opts.ensure_installed, {
         "tsx",
