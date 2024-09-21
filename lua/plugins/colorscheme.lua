@@ -20,7 +20,6 @@ return {
       vim.cmd("colorscheme ayu-mirage")
     end,
   },
-  -- Configure LazyVim to load gruvbox
   -- {
   --   "LazyVim/LazyVim",
   --   opts = {

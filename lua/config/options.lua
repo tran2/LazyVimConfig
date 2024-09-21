@@ -21,6 +21,9 @@ vim.opt.updatetime = 300
 -- diagnostics appeared/became resolved
 vim.opt.signcolumn = "yes"
 
+-- If no prettier config file is found, the formatter will not be used
+vim.g.lazyvim_prettier_needs_config = false
+
 -- local keyset = vim.keymap.set
 -- -- Autocomplete
 -- function _G.check_back_space()
