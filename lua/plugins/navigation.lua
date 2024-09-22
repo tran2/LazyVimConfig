@@ -3,13 +3,13 @@ function Quick_switcher_find_jsFileOnly()
   -- this is because mac grep does not have -P for perl regex
   require("nvim-quick-switcher").find(
     "\\.test\\.|\\.stories.\\|\\.spec\\.",
-    { regex = true, prefix = "short", regex_type = "vE" }
+    { regex = true, prefix = "short", regex_type = "vE", extra_find_args = " -type f" }
   )
 end
 
 return {
   {
-    "Everduin94/nvim-quick-switcher",
+    "tran2/nvim-quick-switcher",
     keys = {
       {
         "<leader>jc",
