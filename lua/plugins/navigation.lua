@@ -39,6 +39,8 @@ return {
         noremap = true,
         silent = true,
       },
+    }
+  },
 
   --   config = function()
   --     require("neotest").setup({
@@ -54,7 +56,6 @@ return {
   --       },
   --     })
   --   end,
-  },
   -- {
   --   "tran2/nvim-quick-switcher",
   --   keys = {
