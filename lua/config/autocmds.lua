@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd({ "BufRead" }, {
     -- }
     vim.schedule(function()
       -- print(vim.inspect(data))
-      require("notify")("Turning autoformat off for this")
+      -- require("notify")("Turning autoformat off for this")
     end)
 
     vim.b.autoformat = false

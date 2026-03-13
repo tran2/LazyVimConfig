@@ -9,20 +9,36 @@ end
 
 return {
   {
-    "rgroli/other.nvim",
-    opts = {
-      mappings = {
-        "react",
-      },
-    },
+    "tran2/nvim-quick-switcher",
     keys = {
       {
-        "<leader>lt",
-        "<cmd>:Other test<CR>",
+        "<leader>jc",
+        "<cmd>:lua require('nvim-quick-switcher').find('.+css|.+scss|.+sass|.+less', { regex = true, prefix='short' })<CR>",
+        desc = "switch to style/css",
         noremap = true,
         silent = true,
       },
-    },
+      {
+        "<leader>js",
+        "<cmd>:lua require('nvim-quick-switcher').find('(.+stories).(jsx|js)$', { regex = true, prefix='short' })<CR>",
+        desc = "switch to source",
+        noremap = true,
+        silent = true,
+      },
+      {
+        "<leader>jt",
+        "<cmd>:lua require('nvim-quick-switcher').find('(.+test|.+spec).(jsx|js)$', { regex = true, prefix='short' })<CR>",
+        desc = "switch to test or spec file",
+        noremap = true,
+        silent = true,
+      },
+      {
+        "<leader>jj",
+        "<cmd>:lua Quick_switcher_find_jsFileOnly()<CR>",
+        desc = "switch to jsx or js",
+        noremap = true,
+        silent = true,
+      },
 
   --   config = function()
   --     require("neotest").setup({

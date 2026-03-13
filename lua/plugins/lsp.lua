@@ -21,7 +21,7 @@ return {
             priority = 200,
             filter = "eslint",
           })
-          require("lazyvim.util").lsp.on_attach(function(client)
+          Snacks.util.lsp.on(function(buffer, client)
             if client.name == "eslint" then
               client.server_capabilities.documentFormattingProvider = true
             elseif client.name == "tsserver" then
